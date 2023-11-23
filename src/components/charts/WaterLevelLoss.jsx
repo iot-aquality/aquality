@@ -26,12 +26,23 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Cantidad de agua perdida por mes',
+      text: 'Cantidad de agua perdida por camión',
+    },
+  },
+  scales: {
+    x: {
+      title: {
+        display: true,
+        text: 'Cantidad de agua (L)',
+      },
     },
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+
+const labels = ['Truck 1', 'Truck 2', 'Truck 3', 'Truck 4', 'Truck 5', 'Truck 6', 'Truck 7']
+
 
 const generateRandomValues = () => {
   return labels.map(() => Math.floor(Math.random() * 5000));
@@ -41,7 +52,7 @@ const data = {
   labels,
   datasets: [
     {
-      label: 'Nivel del Estanque',
+      label: 'Agua total',
       data: generateRandomValues(),
       borderColor: 'rgba(45, 212, 191, 1)', //cryan-400
       backgroundColor: 'rgba(34, 211, 238, 0.5)',

@@ -36,45 +36,46 @@ export const options = {
     x: {
       title: {
         display: true,
-        text: 'Meses',
+        text: 'Horas',
       },
     },
     y: {
       title: {
         display: true,
-        text: 'Calidad del Agua',
+        text: 'Calidad del Agua %',
       },
     },
   },
 };
 
 const labels = [
-  'Enero', 
-  'Febrero', 
-  'Marzo', 
-  'Abril', 
-  'Mayo', 
-  'Junio', 
-  'Julio', 
+  '7:00 AM',
+  '9:00 AM',
+  '12:00 PM',
+  '16:00 PM',
+  '17:00 PM',
+  '18:00 PM',
+  '19:00 PM',
 ];
 
 export const data = {
   labels,
   datasets: [
     {
-      label: 'Temuco',
-      data: [200, 400, 0, 500, 0, 800, 0], 
-      borderColor: 'rgba(45, 212, 191, 1)', //cryan-400
+      label: 'Camión 1',
+      data: [80, 90, 75, 85, 95, 80, 88], // Porcentajes de calidad del agua para Camión 1
+      borderColor: 'rgba(45, 212, 191, 1)', //cyan-400
       backgroundColor: 'rgba(34, 211, 238, 0.5)',
     },
     {
-      label: 'Freire',
-      data: [500, 0, 100, 0, 600, 0, 900], 
+      label: 'Camión 2',
+      data: [70, 85, 80, 75, 90, 85, 80], // Porcentajes de calidad del agua para Camión 2
       borderColor: 'rgba(34, 211, 238, 1)', //sky-400
       backgroundColor: 'rgba(34, 211, 238, 0.5)',
     },
   ],
 };
+
   
 
 function WaterQuality() {

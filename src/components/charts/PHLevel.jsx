@@ -36,7 +36,7 @@ import {
       x: {
         title: {
           display: true,
-          text: 'Semana 1',
+          text: 'Horas',
         },
       },
       y: {
@@ -49,33 +49,33 @@ import {
   };
   
   const labels = [
-    'Lunes', 
-    'Martes', 
-    'Miercoles', 
-    'Jueves', 
-    'Viernes', 
-    'Sabado', 
-    'Domingo', 
+    '6:00 AM',
+    '9:00 AM',
+    '12:00 PM',
+    '3:00 PM',
+    '6:00 PM',
+    '9:00 PM',
+    '12:00 AM',
   ];
   
   export const data = {
     labels,
     datasets: [
       {
-        label: 'Temuco',
-        data: [5, 6, 0, 5, 6, 8, 7], 
-        borderColor: 'rgba(45, 212, 191, 1)', //cryan-400
+        label: 'Camión 1',
+        data: [7.2, 7.5, 7.0, 7.3, 7.6, 7.8, 7.4], // Niveles de pH para Camión 1
+        borderColor: 'rgba(45, 212, 191, 1)', //cyan-400
         backgroundColor: 'rgba(34, 211, 238, 0.5)',
       },
       {
-        label: 'Freire',
-        data: [5, 6, 5, 5, 6, 8, 7], 
+        label: 'Camión 2',
+        data: [7.3, 7.6, 7.5, 7.2, 7.7, 7.5, 7.1], // Niveles de pH para Camión 2
         borderColor: 'rgba(34, 211, 238, 1)', //sky-400
         backgroundColor: 'rgba(34, 211, 238, 0.5)',
       },
     ],
   };
-    
+      
   
   function PHLevel() {
     return <Line 
