@@ -1,6 +1,7 @@
 import { TabList, Tabs, Tab, TabPanels, TabPanel } from "@chakra-ui/react"
 import WaterLevel from "../components/charts/WaterLevel"
 import WaterQuality from "../components/charts/WaterQuality"
+import PHLevel from "../components/charts/PHLevel"
 
 function Dahsboard() {
   return (
@@ -39,6 +40,12 @@ function Dahsboard() {
           <div className="bg-white rounded-md p-4 shadow-md">
 
             <WaterLevel/>
+
+          </div>
+
+          <div className="bg-white rounded-md p-4 shadow-md">
+
+            <PHLevel/>
 
           </div>
         </div>
