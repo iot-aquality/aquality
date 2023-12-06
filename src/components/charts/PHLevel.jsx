@@ -1,3 +1,5 @@
+import axios from 'axios';
+import { useEffect } from 'react';
 
 import {
     Chart as ChartJS,
@@ -47,6 +49,10 @@ import {
       },
     },
   };
+
+
+
+
   
   const labels = [
     '6:00 AM',
@@ -78,6 +84,39 @@ import {
       
   
   function PHLevel() {
+
+
+    const deviceId = 'd9a68890-88fc-11ee-9899-11a8538c56f3';
+    const baseUrl = `http://iot.ceisufro.cl:8080/api/plugins/telemetry/DEVICE/${deviceId}/values/timeseries`;
+    const keys = 'sensor_ph';
+    const startTs = ''; 
+    const endTs = '';   
+  
+    //const apiUrl = `${baseUrl}?keys=${keys}&startTs=${startTs}&endTs=${endTs}`;
+    const apiUrl = `${baseUrl}?keys=${keys}`;
+    const token = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkLm1hcmlsbGFuY2EwMUB1ZnJvbWFpbC5jbCIsInVzZXJJZCI6IjAwYzhjNmIwLTZjMjItMTFlZS04MzgxLWE3M2M5ZmUwYjM0OSIsInNjb3BlcyI6WyJURU5BTlRfQURNSU4iXSwic2Vzc2lvbklkIjoiZWRkN2NiNjItZjU2Mi00YmUwLThkNzEtMTRhMzhjYmMxMDEzIiwiaXNzIjoidGhpbmdzYm9hcmQuaW8iLCJpYXQiOjE3MDE4MjQ3MzQsImV4cCI6MTcwMTgzMzczNCwiZmlyc3ROYW1lIjoiRGFuaWVsIiwibGFzdE5hbWUiOiJNYXJpbGxhbmNhIiwiZW5hYmxlZCI6dHJ1ZSwiaXNQdWJsaWMiOmZhbHNlLCJ0ZW5hbnRJZCI6ImZmNGU4MjYwLTY0ODQtMTFlZS04MzgxLWE3M2M5ZmUwYjM0OSIsImN1c3RvbWVySWQiOiIxMzgxNDAwMC0xZGQyLTExYjItODA4MC04MDgwODA4MDgwODAifQ.wil5-B-zTNdY8xjPjMCP6IKY8fM9omJZrR8ptNlVOvHIgGntcpUSQsK14DVNy_EXNYtth_iC83D1OMKHggXytw'; // Reemplaza con tu token
+  
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(apiUrl, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+  
+        // Aquí puedes manejar la respuesta
+        console.log(response.data);
+      } catch (error) {
+        // Aquí puedes manejar los errores
+        console.error('Error al realizar la solicitud:', error);
+      }
+    };
+  
+    useEffect(() => {
+      fetchData();
+    }, []);
+
+
     return <Line 
     options={options} 
     data={data} 

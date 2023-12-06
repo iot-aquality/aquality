@@ -1,0 +1,7 @@
+
+export const DEVICE_ID = 'd9a68890-88fc-11ee-9899-11a8538c56f3';
+export const BASE_URL = `http://iot.ceisufro.cl:8080/api/plugins/telemetry/DEVICE/${DEVICE_ID}/values/timeseries`;
+
+//export const APIURL = `${baseUrl}?keys=${keys}&startTs=${startTs}&endTs=${endTs}`;
+export const API_URL = `${BASE_URL}?keys=`;
+export const TOKEN = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkLm1hcmlsbGFuY2EwMUB1ZnJvbWFpbC5jbCIsInVzZXJJZCI6IjAwYzhjNmIwLTZjMjItMTFlZS04MzgxLWE3M2M5ZmUwYjM0OSIsInNjb3BlcyI6WyJURU5BTlRfQURNSU4iXSwic2Vzc2lvbklkIjoiZWRkN2NiNjItZjU2Mi00YmUwLThkNzEtMTRhMzhjYmMxMDEzIiwiaXNzIjoidGhpbmdzYm9hcmQuaW8iLCJpYXQiOjE3MDE4NTMxNTksImV4cCI6MTcwMTg2MjE1OSwiZmlyc3ROYW1lIjoiRGFuaWVsIiwibGFzdE5hbWUiOiJNYXJpbGxhbmNhIiwiZW5hYmxlZCI6dHJ1ZSwiaXNQdWJsaWMiOmZhbHNlLCJ0ZW5hbnRJZCI6ImZmNGU4MjYwLTY0ODQtMTFlZS04MzgxLWE3M2M5ZmUwYjM0OSIsImN1c3RvbWVySWQiOiIxMzgxNDAwMC0xZGQyLTExYjItODA4MC04MDgwODA4MDgwODAifQ.QLQgbi3myXLGwGuLHpjuRGxqDUKB3hXw2umXRT2xggcQ0awI7LOoKKTxK3si92ba75oRY8q0P3N4S8pqut41-g'; 

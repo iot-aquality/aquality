@@ -2,8 +2,12 @@ import { useState, useEffect } from "react";
 import { API_URL, TOKEN } from "../../consts"
 import axios from "axios";
 
-const Metrics = ({PHLevel, turbidityLevel}) => {
+const Metrics = () => {
 
+  //ph level state
+  const [PHLevel, setPHLevel] = useState(null);
+  //turbidity level state
+  const [turbidityLevel, setTurbidityLevel] = useState(null);
 
   const fetchData = async () => {
     const device1 = 'sensor_ph';
@@ -17,6 +21,9 @@ const Metrics = ({PHLevel, turbidityLevel}) => {
 
       console.log(response.data)
 
+      // Aquí puedes manejar la respuesta
+      setPHLevel(response.data[device1][0].value);
+      setTurbidityLevel(response.data[device2][0].value);
     } catch (error) {
       // Aquí puedes manejar los errores
       console.error('Error al realizar la solicitud:', error);
@@ -36,7 +43,7 @@ const Metrics = ({PHLevel, turbidityLevel}) => {
       <div className='flex flex-col justify-between h-full w-2/5 bg-amber-400 py-8 rounded-lg shadow-lg' >
         
         <p className='text-center text-white text-3xl font-bold'>Nivel de ph</p>
-        <p className='text-center text-white text-4xl font-bold'>{Math.floor(PHLevel * 100) / 100}</p>
+        <p className='text-center text-white text-4xl font-bold'>{PHLevel}</p>
         
       </div>
       

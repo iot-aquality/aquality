@@ -1,3 +1,7 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { API_URL, TOKEN } from "../../consts"
+
 
 import {
   Chart as ChartJS,
@@ -78,7 +82,47 @@ export const data = {
 
   
 
-function WaterQuality() {
+function WaterQuality({startTs, endTs}) {
+
+  const [turbidityLevel, setTurbidityLevel] = useState();
+
+  const fetchData = async () => {
+
+    const device = 'sensor_turbidez';
+  
+    if( startTs < 100 ){
+      return;
+    }
+
+    try {
+      const response = await axios.get(`${API_URL}${device}&startTs=${startTs=1701845920381}&endTs=${endTs} `, {
+        headers: {
+          'Authorization': `Bearer ${TOKEN}`
+        }
+      });
+      console.log("from water quality")
+      console.log(response.data)
+
+
+    //  if (array.length <= 10) {
+    //    return array.slice(); // Devuelve una copia del array original
+    //  }               
+    
+      console.log(response.data[device])
+      setTurbidityLevel(response.data.slice);
+
+
+    } catch (error) {
+      console.error('Error al realizar la solicitud:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+
+
   return <Line 
   options={options} 
   data={data} 

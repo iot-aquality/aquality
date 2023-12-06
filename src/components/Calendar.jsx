@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 import { Calendar as CalendarComponent } from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-function Calendar() {
+function Calendar({ setStartTs, setEndTs}) {
   const [value, onChange] = useState(new Date());
 
   const formattedDate = format(value, 'MMMM dd, yyyy');
@@ -16,6 +16,9 @@ function Calendar() {
 
         const startTs = timestamp;
         const endTs = timestamp + 86400000; 
+
+        setStartTs(startTs);
+        setEndTs(endTs);
 
         console.log('startTs: ' + startTs + ' endTs: ' + endTs);
 
